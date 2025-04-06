@@ -3,18 +3,22 @@ package com.soumyajit.ISA.HIT.HALDIA.Service;
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import com.soumyajit.ISA.HIT.HALDIA.Dtos.PostDto;
+import com.soumyajit.ISA.HIT.HALDIA.EmailService.EmailSenderService;
 import com.soumyajit.ISA.HIT.HALDIA.Entities.Post;
 import com.soumyajit.ISA.HIT.HALDIA.Entities.User;
 import com.soumyajit.ISA.HIT.HALDIA.Exception.ResourceNotFound;
 import com.soumyajit.ISA.HIT.HALDIA.Exception.UnAuthorizedException;
 import com.soumyajit.ISA.HIT.HALDIA.Repository.PostRepository;
 import com.soumyajit.ISA.HIT.HALDIA.Repository.UserRepository;
+import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -35,6 +39,7 @@ public class PostServiceImpl implements PostService {
     private final ModelMapper modelMapper;
     private final UserRepository userRepository;
     private final Cloudinary cloudinary;
+    private final EmailSenderService emailSenderService;
 
     @Override
     @Transactional
@@ -52,21 +57,27 @@ public class PostServiceImpl implements PostService {
                 imageUrls.add(imageUrl);
             }
         }
-
         Post post = new Post();
         post.setTitle(title);
         post.setDescription(description);
         post.setLikes(0L);
         post.setComments(new ArrayList<>());
         post.setImgOrVdos(imageUrls);
-
         User user = getCurrentUserWithPosts();
         post.setUser_id(user);
-
         Post savedPost = postRepository.save(post);
         log.info("Saved post to the database");
+        List<User> allUsers = userRepository.findAll();
+        for (User u : allUsers) {
+            if (!u.getEmail().equals(user.getEmail())) { // Avoid emailing the admin who posted
+                emailSenderService.sendPostNotification(u.getEmail(), user.getName(), post);
+            }
+        }
         return modelMapper.map(savedPost, PostDto.class);
     }
+
+
+
 
     @Override
     @Cacheable(value = "postById", key = "#postId")

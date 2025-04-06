@@ -57,12 +57,12 @@ public class EmailService {
             <div style="font-family: 'Segoe UI', sans-serif; background-color: #f4f8fc; padding: 20px;">
                 <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
                     <div style="text-align: center; margin-bottom: 10px;">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/00/International_Society_of_Automation_logo.svg/1200px-International_Society_of_Automation_logo.svg.png"
-                             alt="ISA Logo" style="width: 100px; height: auto;" />
+                        <img src="https://res.cloudinary.com/dcrmg4j1l/image/upload/v1743970965/isalogo-removebg-preview_h5wtkm.png"
+                             alt="ISA Logo" style="width: 60px; height: auto;" />
                     </div>
                     <hr style="margin-top: 30px; border: none; border-top: 1px solid #ccc;" />
                     <p style="text-align: center; font-size: 16px; color: #003366; margin-bottom: 20px;">
-                        👋 <strong>Greetings from ISA HIT Student Chapter, %s</strong>
+                        👋 <strong>Greetings from ISA & ISOI HIT SC, %s</strong>
                     </p>
                     <h2 style="color: #003366; text-align: center;">%s</h2>
                     <p style="font-size: 14px; color: #333333; text-align: center;">📬 %s</p>
@@ -72,7 +72,7 @@ public class EmailService {
                     <p style="font-size: 14px; color: #555555; text-align: center;">%s</p>
                     <hr style="margin-top: 30px; border: none; border-top: 1px solid #ccc;" />
                     <p style="font-size: 12px; color: #888888; text-align: center; margin-top: 10px;">
-                        📍 ISA HIT Student Chapter | Haldia, West Bengal
+                         ISA & ISOI HIT SC | 📍 Haldia, West Bengal
                     </p>
                 </div>
             </div>
@@ -84,12 +84,12 @@ public class EmailService {
         <div style="font-family: 'Segoe UI', sans-serif; background-color: #f4f8fc; padding: 20px;">
             <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
                 <div style="text-align: center; margin-bottom: 10px;">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/00/International_Society_of_Automation_logo.svg/1200px-International_Society_of_Automation_logo.svg.png"
-                         alt="ISA Logo" style="width: 100px; height: auto;" />
+                    <img src="https://res.cloudinary.com/dcrmg4j1l/image/upload/v1743970965/isalogo-removebg-preview_h5wtkm.png"
+                             alt="ISA Logo" style="width: 60px; height: auto;" />
                 </div>
                 <hr style="margin-top: 30px; border: none; border-top: 1px solid #ccc;" />
                 <p style="text-align: center; font-size: 16px; color: #003366; margin: 10px 0;">
-                    👋 <strong>Greetings from ISA HIT Student Chapter, %s</strong>
+                    👋 <strong>Greetings from ISA & ISOI HIT SC, %s</strong>
                 </p>
                 <h2 style="color: #003366; text-align: center;">🎉 Password Reset Successful</h2>
                 <p style="font-size: 16px; color: #333333; text-align: center;">
@@ -100,7 +100,7 @@ public class EmailService {
                 </p>
                 <hr style="margin-top: 30px; border: none; border-top: 1px solid #ccc;" />
                 <p style="font-size: 12px; color: #888888; text-align: center; margin-top: 10px;">
-                    📍 ISA HIT Student Chapter | Haldia, West Bengal
+                     ISA & ISOI HIT SC | 📍 Haldia, West Bengal
                 </p>
             </div>
         </div>

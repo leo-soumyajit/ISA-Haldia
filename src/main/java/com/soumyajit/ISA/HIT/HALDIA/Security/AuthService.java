@@ -94,7 +94,7 @@ public class AuthService {
 
             String plainText = "Welcome to our website, dear " + name + ".\n\n"
                     + "We are excited to have you onboard.\n"
-                    + "ISA HIT Student Chapter";
+                    + "ISA & ISOI HIT SC";
 
             String htmlContent = buildStyledWelcomeEmail(name);
 
@@ -112,8 +112,8 @@ public class AuthService {
         <div style="font-family: 'Segoe UI', sans-serif; background-color: #f4f8fc; padding: 20px;">
             <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
                 <div style="text-align: center; margin-bottom: 10px;">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/00/International_Society_of_Automation_logo.svg/1200px-International_Society_of_Automation_logo.svg.png"
-                         alt="ISA Logo" style="width: 100px; height: auto;" />
+                   <img src="https://res.cloudinary.com/dcrmg4j1l/image/upload/v1743970965/isalogo-removebg-preview_h5wtkm.png"
+                             alt="ISA Logo" style="width: 60px; height: auto;" />
                 </div>
                <hr style="margin-top: 30px; border: none; border-top: 1px solid #ccc;" />
                 <h2 style="color: #003366; text-align: center;">🎓 Welcome to ISA HIT Student Chapter 🎓</h2>
@@ -127,7 +127,7 @@ public class AuthService {
                 </div>
                 <hr style="margin-top: 30px; border: none; border-top: 1px solid #ccc;" />
                 <p style="font-size: 12px; color: #888888; text-align: center; margin-top: 10px;">
-                    📍 ISA HIT Student Chapter | Haldia, West Bengal
+                     ISA & ISOI HIT SC | 📍 Haldia, West Bengal
                 </p>
             </div>
         </div>

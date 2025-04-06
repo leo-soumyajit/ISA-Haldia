@@ -1,12 +1,12 @@
 package com.soumyajit.ISA.HIT.HALDIA.Advices;
 
-//import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.JwtException;
 import com.soumyajit.ISA.HIT.HALDIA.Exception.ResourceNotFound;
-//import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.JwtException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-//import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -16,10 +16,9 @@ import javax.security.sasl.AuthenticationException;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-
-
 
     @ExceptionHandler(ResourceNotFound.class)
     public ResponseEntity<ApiResponse<?>> resourceNotFound(ResourceNotFound exception){
@@ -30,8 +29,6 @@ public class GlobalExceptionHandler {
     private ResponseEntity<ApiResponse<?>> buildErrorResponseEntity(ApiError apiError) {
         return new ResponseEntity<>(new ApiResponse<>(apiError),apiError.getStatus());
     }
-
-
 
 
     @ExceptionHandler(JwtException.class)
@@ -76,7 +73,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity<ApiResponse<?>> InternalServererror(RuntimeException e){
+    public ResponseEntity<ApiResponse<?>> InternalServerError(RuntimeException e){
         ApiError apiError = ApiError
                 .builder()
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -84,6 +81,4 @@ public class GlobalExceptionHandler {
                 .build();
         return buildErrorResponseEntity(apiError);
     }
-
-
 }

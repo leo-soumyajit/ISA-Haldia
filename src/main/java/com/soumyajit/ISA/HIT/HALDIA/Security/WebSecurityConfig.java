@@ -47,10 +47,11 @@ public class WebSecurityConfig {
 //                        .requestMatchers("/otp/**").permitAll()
 //                        .requestMatchers(HttpMethod.GET,"/posts/**").permitAll()
                                 .requestMatchers(HttpMethod.GET,"/posts/**").authenticated()
-                                .requestMatchers(HttpMethod.POST,"/posts/**").hasRole("ADMIN")
-                                .requestMatchers(HttpMethod.PUT,"/posts/**").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.POST,"/posts/createPost/**").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.PUT,"/posts/update/**").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.DELETE,"/posts/**").hasRole("ADMIN")
                                 .requestMatchers("/comments/**").authenticated()
+                                .requestMatchers("/like/**","/removelike/**").authenticated()
                         .anyRequest().permitAll()
                 )
                 .exceptionHandling(exceptionHandlingConfig ->

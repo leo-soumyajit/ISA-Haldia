@@ -35,16 +35,16 @@ public class PostController {
         return ResponseEntity.ok(postService.getAllPosts());
     }
 
-//    @PostMapping("/{postId}/like")
-//    public ResponseEntity<PostDto> postLikeById(@PathVariable Long postId){
-//        return ResponseEntity.ok(postService.postLikeById(postId));
-//    }
+    @PostMapping("/{postId}/like")
+    public ResponseEntity<PostDto> postLikeById(@PathVariable Long postId){
+        return ResponseEntity.ok(postService.postLikeById(postId));
+    }
 
-//    @PostMapping("/{postId}/removelike")
-//    public ResponseEntity<PostDto> removeLike(@PathVariable Long postId) {
-//        PostDto postDto = postService.removeLikeById(postId);
-//        return ResponseEntity.ok(postDto);
-//    }
+    @PostMapping("/{postId}/removelike")
+    public ResponseEntity<PostDto> removeLike(@PathVariable Long postId) {
+        PostDto postDto = postService.removeLikeById(postId);
+        return ResponseEntity.ok(postDto);
+    }
 
 
     @PutMapping(value = "/{postId}/update" ,consumes = {"multipart/form-data"})
