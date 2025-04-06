@@ -46,7 +46,7 @@ public class WebSecurityConfig {
 //                        .requestMatchers("/password-reset/**").permitAll()
 //                        .requestMatchers("/otp/**").permitAll()
 //                        .requestMatchers(HttpMethod.GET,"/posts/**").permitAll()
-                                .requestMatchers(HttpMethod.GET,"/posts/**").permitAll()
+                                .requestMatchers(HttpMethod.GET,"/posts/**").authenticated()
                                 .requestMatchers(HttpMethod.POST,"/posts/**").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.PUT,"/posts/**").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.DELETE,"/posts/**").hasRole("ADMIN")

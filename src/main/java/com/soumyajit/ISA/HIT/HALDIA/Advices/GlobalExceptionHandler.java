@@ -3,9 +3,11 @@ package com.soumyajit.ISA.HIT.HALDIA.Advices;
 //import io.jsonwebtoken.JwtException;
 import com.soumyajit.ISA.HIT.HALDIA.Exception.ResourceNotFound;
 //import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.JwtException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 //import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -32,14 +34,14 @@ public class GlobalExceptionHandler {
 
 
 
-//    @ExceptionHandler(JwtException.class)
-//    public ResponseEntity<ApiResponse<?>> HandleJwtException(JwtException exception){
-//        ApiError error = ApiError.builder()
-//                .status(HttpStatus.UNAUTHORIZED)
-//                .message(exception.getMessage())
-//                .build();
-//        return buildErrorResponseEntity(error);
-//    }
+    @ExceptionHandler(JwtException.class)
+    public ResponseEntity<ApiResponse<?>> HandleJwtException(JwtException exception){
+        ApiError error = ApiError.builder()
+                .status(HttpStatus.UNAUTHORIZED)
+                .message(exception.getMessage())
+                .build();
+        return buildErrorResponseEntity(error);
+    }
 
     @ExceptionHandler(AuthenticationException.class)
     public ResponseEntity<ApiResponse<?>> HandleAuthenticationException(AuthenticationException exception){
@@ -50,14 +52,14 @@ public class GlobalExceptionHandler {
         return buildErrorResponseEntity(error);
     }
 
-//    @ExceptionHandler(AccessDeniedException.class)
-//    public ResponseEntity<ApiResponse<?>> HandleAccessDeniedException(AccessDeniedException exception){
-//        ApiError error = ApiError.builder()
-//                .status(HttpStatus.FORBIDDEN)
-//                .message(exception.getMessage())
-//                .build();
-//        return buildErrorResponseEntity(error);
-//    }
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<ApiResponse<?>> HandleAccessDeniedException(AccessDeniedException exception){
+        ApiError error = ApiError.builder()
+                .status(HttpStatus.FORBIDDEN)
+                .message(exception.getMessage())
+                .build();
+        return buildErrorResponseEntity(error);
+    }
 
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
