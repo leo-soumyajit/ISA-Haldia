@@ -59,33 +59,46 @@ public class OtpService {
 
     private String buildStyledOtpEmail(String otp) {
         return """
-            <div style="font-family: 'Segoe UI', sans-serif; background-color: #f4f8fc; padding: 20px;">
-                <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-                    <div style="text-align: center; margin-bottom: 10px;">
-                        <img src="https://res.cloudinary.com/dcrmg4j1l/image/upload/v1743970965/isalogo-removebg-preview_h5wtkm.png"
-                             alt="ISA Logo" style="width: 60px; height: auto;" />
-                    </div>
-                    <hr style="margin-top: 30px; border: none; border-top: 1px solid #ccc;" />
-                    <p style="text-align: center; font-size: 16px; color: #003366; margin: 10px 0;">
-                        👋 <strong>Greetings from ISA HIT Student Chapter</strong>
-                    </p>
-                    <p style="font-size: 16px; color: #333333; text-align: center;">
-                        ✉️ To verify yourself, use this OTP:
-                    </p>
-                    <div style="margin: 30px auto; text-align: center;">
-                        <span style="font-size: 24px; font-weight: bold; color: #004080; padding: 10px 20px; background-color: #e0ebf5; border: 2px dashed #004080; border-radius: 6px;">%s</span>
-                    </div>
-                    <p style="font-size: 14px; color: #555555; text-align: center;">
-                        ⏳ Note: This OTP is valid for only 10 minutes.
-                    </p>
-                    <hr style="margin-top: 30px; border: none; border-top: 1px solid #ccc;" />
-                    <p style="font-size: 12px; color: #888888; text-align: center; margin-top: 10px;">
-                         ISA & ISOI HIT SC | 📍 Haldia, West Bengal
-                    </p>
+        <div style="font-family: 'Segoe UI', sans-serif; background-color: #f4f8fc; padding: 20px;">
+            <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <div style="text-align: center; margin-bottom: 10px;">
+                    <img src="https://res.cloudinary.com/dcrmg4j1l/image/upload/v1743970965/isalogo-removebg-preview_h5wtkm.png"
+                         alt="ISA Logo" style="width: 60px; height: auto;" />
+                </div>
+                <hr style="margin-top: 30px; border: none; border-top: 1px solid #ccc;" />
+                <p style="text-align: center; font-size: 16px; color: #003366; margin: 10px 0;">
+                    👋 <strong>Greetings from ISA HIT Student Chapter</strong>
+                </p>
+                <p style="font-size: 16px; color: #333333; text-align: center;">
+                    ✉️ To verify yourself, use this OTP:
+                </p>
+                <div style="margin: 30px auto; text-align: center;">
+                    <span style="font-size: 24px; font-weight: bold; color: #004080; padding: 10px 20px; background-color: #e0ebf5; border: 2px dashed #004080; border-radius: 6px;">%s</span>
+                </div>
+                <p style="font-size: 14px; color: #555555; text-align: center;">
+                    ⏳ Note: This OTP is valid for only 10 minutes.
+                </p>
+                <hr style="margin-top: 30px; border: none; border-top: 1px solid #ccc;" />
+
+                <p style="font-size: 12px; color: #888888; text-align: center; margin-top: 10px;">
+                     ISA & ISOI HIT SC | 📍 Haldia, West Bengal
+                </p>
+                <div style="text-align: center; margin-top: 10px;">
+                    <a href="https://www.instagram.com" style="margin: 0 8px;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" width="18" alt="Instagram" />
+                    </a>
+                    <a href="https://www.facebook.com" style="margin: 0 8px;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" width="18" alt="Facebook" />
+                    </a>
+                    <a href="https://www.linkedin.com" style="margin: 0 8px;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" width="18" alt="LinkedIn" />
+                    </a>
                 </div>
             </div>
-            """.formatted(otp);
+        </div>
+        """.formatted(otp);
     }
+
 
     public void saveOTP(String email, String otp) {
         otpStorage.put(email, new OTPDetails(otp, System.currentTimeMillis()));

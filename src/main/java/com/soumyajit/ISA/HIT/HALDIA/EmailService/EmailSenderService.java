@@ -39,7 +39,6 @@ public class EmailSenderService {
         return """
             <div style="font-family: 'Segoe UI', sans-serif; background-color: #f4f8fc; padding: 20px;">
                 <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 20px rgba(0,0,0,0.1);">
-                    
                     <div style="text-align: center; margin-bottom: 20px;">
                         <img src="https://res.cloudinary.com/dcrmg4j1l/image/upload/v1743970965/isalogo-removebg-preview_h5wtkm.png"
                              alt="ISA Logo" style="width: 60px; height: auto;" />
@@ -48,7 +47,6 @@ public class EmailSenderService {
                     </div>
 
                     <h3 style="color: #222222; font-size: 22px; text-align: center; margin-top: 20px;">%s</h3>
-                    
                     %s
 
                     <p style="font-size: 16px; color: #444; line-height: 1.6; margin-top: 20px;">%s</p>
@@ -58,9 +56,20 @@ public class EmailSenderService {
                     </div>
 
                     <hr style="margin-top: 30px; border: none; border-top: 1px solid #ccc;" />
-                    <p style="font-size: 12px; color: #888888; text-align: center;">
+                    <p style="font-size: 12px; color: #888888; text-align: center; margin-top: 10px;">
                         © ISA & ISOI HIT SC, All Rights Reserved
                     </p>
+                    <div style="text-align: center; margin-top: 10px;">
+                        <a href="https://www.instagram.com" style="margin: 0 8px;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" width="18" alt="Instagram" />
+                        </a>
+                        <a href="https://www.facebook.com" style="margin: 0 8px;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" width="18" alt="Facebook" />
+                        </a>
+                        <a href="https://www.linkedin.com" style="margin: 0 8px;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" width="18" alt="LinkedIn" />
+                        </a>
+                    </div>
                 </div>
             </div>
         """.formatted(

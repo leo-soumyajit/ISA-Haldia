@@ -71,9 +71,14 @@ public class EmailService {
                     </div>
                     <p style="font-size: 14px; color: #555555; text-align: center;">%s</p>
                     <hr style="margin-top: 30px; border: none; border-top: 1px solid #ccc;" />
-                    <p style="font-size: 12px; color: #888888; text-align: center; margin-top: 10px;">
+                     <p style="font-size: 12px; color: #888888; text-align: center; margin-top: 10px;">
                          ISA & ISOI HIT SC | 📍 Haldia, West Bengal
                     </p>
+                    <div style="text-align: center; margin-top: 10px;">
+                        <a href="https://www.instagram.com" style="margin: 0 8px;"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" width="18" alt="Instagram" /></a>
+                        <a href="https://www.facebook.com" style="margin: 0 8px;"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" width="18" alt="Facebook" /></a>
+                        <a href="https://www.linkedin.com" style="margin: 0 8px;"><img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" width="18" alt="LinkedIn" /></a>
+                    </div>
                 </div>
             </div>
             """, userName, title, message, code, note);
@@ -85,7 +90,7 @@ public class EmailService {
             <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
                 <div style="text-align: center; margin-bottom: 10px;">
                     <img src="https://res.cloudinary.com/dcrmg4j1l/image/upload/v1743970965/isalogo-removebg-preview_h5wtkm.png"
-                             alt="ISA Logo" style="width: 60px; height: auto;" />
+                         alt="ISA Logo" style="width: 60px; height: auto;" />
                 </div>
                 <hr style="margin-top: 30px; border: none; border-top: 1px solid #ccc;" />
                 <p style="text-align: center; font-size: 16px; color: #003366; margin: 10px 0;">
@@ -102,6 +107,11 @@ public class EmailService {
                 <p style="font-size: 12px; color: #888888; text-align: center; margin-top: 10px;">
                      ISA & ISOI HIT SC | 📍 Haldia, West Bengal
                 </p>
+                <div style="text-align: center; margin-top: 10px;">
+                    <a href="https://www.instagram.com" style="margin: 0 8px;"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" width="18" alt="Instagram" /></a>
+                    <a href="https://www.facebook.com" style="margin: 0 8px;"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" width="18" alt="Facebook" /></a>
+                    <a href="https://www.linkedin.com" style="margin: 0 8px;"><img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" width="18" alt="LinkedIn" /></a>
+                </div>
             </div>
         </div>
         """.formatted(userName);

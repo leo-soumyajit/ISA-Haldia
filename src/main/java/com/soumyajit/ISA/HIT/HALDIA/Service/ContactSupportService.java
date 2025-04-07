@@ -14,7 +14,7 @@ public class ContactSupportService {
     private final JavaMailSender mailSender;
 
     public void sendSupportMessage(ContactSupportDTO contactDTO) throws Exception {
-        //Send email to admin/support
+        // Send email to admin/support
         MimeMessage messageToSupport = mailSender.createMimeMessage();
         MimeMessageHelper helperToSupport = new MimeMessageHelper(messageToSupport, true, "UTF-8");
 
@@ -52,6 +52,17 @@ public class ContactSupportService {
                     <div style="margin-top: 30px; text-align: center; font-size: 14px; color: #666;">
                         <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;" />
                         <p>ISA HIT Student Chapter | Haldia, West Bengal</p>
+                        <div style="margin-bottom: 10px;">
+                            <a href="https://www.instagram.com" style="margin: 0 8px;">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" width="18" alt="Instagram" />
+                            </a>
+                            <a href="https://www.facebook.com" style="margin: 0 8px;">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" width="18" alt="Facebook" />
+                            </a>
+                            <a href="https://www.linkedin.com" style="margin: 0 8px;">
+                                <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" width="18" alt="LinkedIn" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </body>
@@ -66,7 +77,7 @@ public class ContactSupportService {
         helperToSupport.setText(contactDTO.getMessage(), htmlContentToSupport);
         mailSender.send(messageToSupport);
 
-        //Auto-reply to user
+        // Auto-reply to user
         MimeMessage autoReply = mailSender.createMimeMessage();
         MimeMessageHelper helperToUser = new MimeMessageHelper(autoReply, true, "UTF-8");
 
@@ -95,9 +106,21 @@ public class ContactSupportService {
                         <p style="margin: 5px 0;"><strong>Message:</strong><br/>%s</p>
                     </div>
 
-                    <p style="font-size: 14px; color: #888; text-align: center; margin-top: 40px;">
-                        ISA HIT Student Chapter | Haldia, West Bengal
-                    </p>
+                    <div style="margin-top: 30px; text-align: center; font-size: 14px; color: #666;">
+                        <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;" />
+                        <p>ISA HIT Student Chapter | Haldia, West Bengal</p>
+                        <div style="margin-bottom: 10px;">
+                            <a href="https://www.instagram.com" style="margin: 0 8px;">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" width="18" alt="Instagram" />
+                            </a>
+                            <a href="https://www.facebook.com" style="margin: 0 8px;">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" width="18" alt="Facebook" />
+                            </a>
+                            <a href="https://www.linkedin.com" style="margin: 0 8px;">
+                                <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" width="18" alt="LinkedIn" />
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </body>
             </html>
